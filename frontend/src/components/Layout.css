@@ -1,0 +1,391 @@
+/* =========================================================
+   APP LAYOUT
+========================================================= */
+
+.app-layout {
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.app-sidebar {
+  width: 250px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e5e7eb;
+
+  padding: 22px 16px;
+
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 4px 8px 24px;
+}
+
+
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.sidebar-brand h2 {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  color: #111827;
+}
+
+
+.sidebar-brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 10px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.sidebar-nav-item:hover {
+  background: #f3f4f6;
+
+  color: #111827;
+}
+
+
+.sidebar-nav-item.active {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+.nav-icon {
+  width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BOTTOM SECTION
+========================================================= */
+
+.sidebar-bottom {
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #f0f1f3;
+}
+
+
+/* =========================================================
+   USER
+========================================================= */
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 8px 13px;
+}
+
+
+.sidebar-user-avatar {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+.sidebar-user-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.sidebar-user-info strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #111827;
+
+  font-size: 12px;
+}
+
+
+.sidebar-user-info span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #4b5563;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.logout-button:hover {
+  background: #fef2f2;
+
+  border-color: #fecaca;
+
+  color: #b91c1c;
+}
+
+
+.logout-icon {
+  font-size: 16px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.app-main {
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .app-sidebar {
+    width: 210px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .sidebar-brand h2 {
+    font-size: 12px;
+  }
+
+  .sidebar-brand span {
+    font-size: 9px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .app-sidebar {
+    width: 68px;
+
+    padding: 16px 8px;
+  }
+
+
+  .sidebar-brand {
+    justify-content: center;
+
+    padding: 4px 0 20px;
+  }
+
+
+  .sidebar-brand > div:last-child {
+    display: none;
+  }
+
+
+  .sidebar-nav-item {
+    justify-content: center;
+
+    padding: 11px 8px;
+  }
+
+
+  .sidebar-nav-item span:last-child {
+    display: none;
+  }
+
+
+  .sidebar-user {
+    justify-content: center;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .sidebar-user-info {
+    display: none;
+  }
+
+
+  .logout-button {
+    justify-content: center;
+
+    padding: 10px 8px;
+  }
+
+
+  .logout-button span:last-child {
+    display: none;
+  }
+
+}

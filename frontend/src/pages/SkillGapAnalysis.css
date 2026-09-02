@@ -1,0 +1,947 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.skill-gap-analysis-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.skill-gap-analysis-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+
+.skill-gap-analysis-eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748b;
+}
+
+
+.skill-gap-analysis-header h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #16213d;
+}
+
+
+.skill-gap-analysis-role {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.skill-gap-analysis-status {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+
+.skill-gap-analysis-status.skill-gap {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+.skill-gap-analysis-status.meets-expectation {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.skill-gap-analysis-status.above-expectation {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+
+/* =========================================================
+   LEVEL CARD
+========================================================= */
+
+.skill-gap-level-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 28px;
+  margin-bottom: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+
+.skill-gap-level-number {
+  min-width: 150px;
+}
+
+
+.skill-gap-level-number span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+
+.skill-gap-level-number strong {
+  display: block;
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 800;
+  color: #16213d;
+}
+
+
+.skill-gap-level-number p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   DISCRETE LEVEL SCALE
+========================================================= */
+
+.skill-gap-level-scale {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.skill-gap-discrete-levels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  position: relative;
+  padding: 0 12px;
+}
+
+
+/* Connecting line */
+
+.skill-gap-discrete-levels::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  right: 12px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+
+/* Individual level */
+
+.skill-gap-level-item {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* Dot */
+
+.skill-gap-level-dot {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  border: 3px solid #cbd5e1;
+
+  box-sizing: border-box;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+
+/* Completed levels */
+
+.skill-gap-level-item.active .skill-gap-level-dot {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+
+/* Final level */
+
+.skill-gap-level-item.final .skill-gap-level-dot {
+  box-shadow:
+    0 0 0 5px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Level number */
+
+.skill-gap-level-item > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+
+.skill-gap-level-item.active > span {
+  color: #1d4ed8;
+}
+
+
+/* Expected level marker */
+
+.skill-gap-level-item.expected .skill-gap-level-dot {
+  border-color: #0f172a;
+  background: #ffffff;
+}
+
+
+/* If expected == final, keep final appearance */
+
+.skill-gap-level-item.final.expected
+  .skill-gap-level-dot {
+
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+
+/* =========================================================
+   LEGEND
+========================================================= */
+
+.skill-gap-level-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  margin-top: 22px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+
+.skill-gap-level-legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.skill-gap-level-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+
+.final-legend i {
+  background: #2563eb;
+}
+
+
+.expected-legend i {
+  background: #ffffff;
+  border: 2px solid #0f172a;
+  box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.skill-gap-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+
+.skill-gap-summary-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+
+.skill-gap-summary-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+
+.skill-gap-summary-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+
+.skill-gap-summary-card.strengths {
+  border-top: 3px solid #16a34a;
+}
+
+
+.skill-gap-summary-card.strengths strong {
+  color: #15803d;
+}
+
+
+.skill-gap-summary-card.development {
+  border-top: 3px solid #f59e0b;
+}
+
+
+.skill-gap-summary-card.development strong {
+  color: #b45309;
+}
+
+
+.skill-gap-summary-card.gaps {
+  border-top: 3px solid #dc2626;
+}
+
+
+.skill-gap-summary-card.gaps strong {
+  color: #b91c1c;
+}
+
+
+.skill-gap-summary-card.surplus {
+  border-top: 3px solid #2563eb;
+}
+
+
+.skill-gap-summary-card.surplus strong {
+  color: #1d4ed8;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.skill-gap-analysis-section {
+  margin-bottom: 40px;
+}
+
+
+.skill-gap-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #f1f5f9;
+  font-size: 20px;
+}
+
+
+.skill-gap-section-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #16213d;
+}
+
+
+.skill-gap-section-heading p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   COMPETENCY GRID
+========================================================= */
+
+.skill-gap-competency-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
+  gap: 20px;
+}
+
+
+/* =========================================================
+   COMPETENCY CARD
+========================================================= */
+
+.skill-gap-competency-card {
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+
+.skill-gap-competency-card.gap-card {
+  border-top: 3px solid #dc2626;
+}
+
+
+.skill-gap-competency-card.development-card {
+  border-top: 3px solid #f59e0b;
+}
+
+
+.skill-gap-competency-card.strength-card {
+  border-top: 3px solid #16a34a;
+}
+
+
+.skill-gap-competency-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+
+.skill-gap-competency-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  color: #16213d;
+}
+
+
+.skill-gap-competency-description {
+  margin: 7px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+
+.skill-gap-competency-score {
+  flex-shrink: 0;
+}
+
+
+.skill-gap-competency-score strong {
+  font-size: 24px;
+  font-weight: 800;
+  color: #16213d;
+}
+
+
+/* =========================================================
+   CONCEPT TAGS
+========================================================= */
+
+.skill-gap-concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+
+.skill-gap-concept {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+.skill-gap-concept.concept-strength {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+
+.skill-gap-concept.concept-development {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+
+.skill-gap-concept.concept-gap {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+
+/* =========================================================
+   CONCEPT SUMMARY CARDS
+========================================================= */
+
+.skill-gap-concept-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 20px;
+}
+
+
+.skill-gap-concept-summary-card {
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+
+.skill-gap-concept-summary-card.strength-card {
+  border-top: 3px solid #16a34a;
+}
+
+
+.skill-gap-concept-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+
+.skill-gap-concept-summary-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  color: #16213d;
+}
+
+
+.skill-gap-concept-summary-header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+
+.skill-gap-concept-status {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+
+.skill-gap-concept-status.strength {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+
+/* =========================================================
+   DETAILED EVIDENCE
+========================================================= */
+
+.skill-gap-detailed-evidence {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+
+.skill-gap-evidence-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 22px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 750;
+  color: #16213d;
+  text-align: left;
+}
+
+
+.skill-gap-evidence-toggle:hover {
+  background: #f8fafc;
+}
+
+
+.skill-gap-evidence-toggle span:last-child {
+  transition: transform 0.2s ease;
+}
+
+
+.skill-gap-evidence-toggle span:last-child.rotated {
+  transform: rotate(180deg);
+}
+
+
+.skill-gap-evidence-details {
+  padding: 0 22px 22px;
+  border-top: 1px solid #e2e8f0;
+}
+
+
+.detail-group {
+  padding-top: 22px;
+}
+
+
+.detail-group h3 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #16213d;
+}
+
+
+.detail-item {
+  padding: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.detail-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+
+.detail-item-header strong {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #16213d;
+}
+
+
+.detail-item-header span {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 800;
+  color: #475569;
+}
+
+
+.detail-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+
+.detail-item-meta span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+}
+
+
+.detail-item > p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   LOADING / ERROR
+========================================================= */
+
+.skill-gap-analysis-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 32px;
+  text-align: center;
+}
+
+
+.skill-gap-analysis-state p {
+  margin-top: 16px;
+  color: #64748b;
+}
+
+
+.skill-gap-analysis-error h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #16213d;
+}
+
+
+.skill-gap-analysis-error p {
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+
+.skill-gap-analysis-loader {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: skill-gap-spin 0.8s linear infinite;
+}
+
+/* =========================================================
+   DEVELOPMENT CONCEPT SUMMARY
+========================================================= */
+
+.skill-gap-concept-summary-card.development-card {
+  border-top: 3px solid #f59e0b;
+}
+
+
+.skill-gap-concept-status.development {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+
+.skill-gap-development-score {
+  flex-shrink: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #b45309;
+}
+
+
+.skill-gap-development-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+
+@keyframes skill-gap-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .skill-gap-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .skill-gap-analysis-page {
+    padding: 20px;
+  }
+
+
+  .skill-gap-analysis-header {
+    flex-direction: column;
+  }
+
+
+  .skill-gap-analysis-header h1 {
+    font-size: 30px;
+  }
+
+
+  .skill-gap-level-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+
+  .skill-gap-level-number {
+    min-width: 0;
+  }
+
+
+  .skill-gap-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .skill-gap-competency-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .skill-gap-concept-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .skill-gap-concept-summary-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .skill-gap-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .skill-gap-analysis-page {
+    padding: 16px;
+  }
+
+
+  .skill-gap-analysis-header h1 {
+    font-size: 26px;
+  }
+
+
+  .skill-gap-level-number strong {
+    font-size: 46px;
+  }
+
+
+  .skill-gap-summary-card {
+    min-height: 100px;
+  }
+
+
+  .detail-item-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .skill-gap-discrete-levels {
+    padding: 0 4px;
+  }
+
+
+  .skill-gap-discrete-levels::before {
+    left: 4px;
+    right: 4px;
+  }
+
+
+  .skill-gap-level-dot {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .skill-gap-level-legend {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
